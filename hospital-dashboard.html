@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hospital Dashboard – BloodConnect</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="https://img.icons8.com/fluency/48/like.png" width="32" alt="BloodConnect"/>
+      <div>
+        <strong>BloodConnect</strong><br>
+        <span class="tagline">Community Network</span>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="find-donor.html">Find Donors</a>
+      <a href="request-help.html">Request Help</a>
+      <a href="hospital-dashboard.html" class="active">For Hospitals</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="signin.html" class="btn-outline">Sign In</a>
+      <a href="register-donor.html" class="btn-outline">Register</a>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1>Hospital Dashboard</h1>
+    <p>Manage your blood stock and donation requests with ease</p>
+  </section>
+
+  <!-- Main Section -->
+  <section class="request-help-container">
+    
+    <!-- Add Stock Form -->
+    <div class="request-card">
+      <h2>➕ Add Blood Stock</h2>
+      <form id="stockForm">
+        <div class="form-group">
+          <label for="hospital">Hospital Name</label>
+          <input type="text" id="hospital" placeholder="City Medical Center" required />
+        </div>
+
+        <div class="form-group">
+          <label for="bloodType">Blood Group</label>
+          <select id="bloodType" required>
+            <option value="">Select Blood Group</option>
+            <option>O+</option><option>O-</option><option>A+</option><option>A-</option>
+            <option>B+</option><option>B-</option><option>AB+</option><option>AB-</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="units">Units Available</label>
+          <input type="number" id="units" placeholder="e.g., 10" required />
+        </div>
+
+        <button type="submit" class="btn-gradient full">Add to Inventory</button>
+      </form>
+    </div>
+
+    <!-- View Stock Table -->
+    <div class="request-card">
+      <h2>📋 Current Blood Stock</h2>
+      <table style="width:100%; border-collapse: collapse;" id="stockTable">
+        <thead>
+          <tr style="background-color: #f1f5f9;">
+            <th style="text-align:left; padding:8px;">Hospital</th>
+            <th style="text-align:left; padding:8px;">Blood Group</th>
+            <th style="text-align:left; padding:8px;">Units</th>
+            <th style="text-align:left; padding:8px;">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- JS will populate this -->
+        </tbody>
+      </table>
+
+      <!-- Blood Chart -->
+      <h2 style="margin-top:2rem;">📊 Blood Stock Overview</h2>
+      <div id="stockChart" style="margin-top: 1rem;"></div>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Request Donation Help – BloodConnect</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="https://img.icons8.com/fluency/48/like.png" width="32" alt="BloodConnect"/>
+      <div>
+        <strong>BloodConnect</strong><br>
+        <span class="tagline">Community Network</span>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="find-donor.html">Find Donors</a>
+      <a href="request-help.html" class="active">Request Help</a>
+      <a href="hospital-dashboard.html">For Hospitals</a>
+      <a href="about.html">About</a>
+    </nav>
+    <!-- <div class="nav-actions">
+      <button class="btn-outline">Sign In</button>
+      <button class="btn-gradient">Register as Donor</button>
+      
+    </div> -->
+
+     <div class="nav-actions">
+      <a href="signin.html" class="btn-outline">Sign In</a>
+      <a href="register-donor.html" class="btn-outline">Register</a>
+    </div>
+  
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1>Request Donation Help</h1>
+    <p>Submit a request to connect with compatible donors in your area</p>
+  </section>
+
+  <!-- Main Request Section -->
+  <section class="request-help-container">
+
+    <!-- Left Form Card -->
+    <div class="request-card">
+      <h2>Donation Request</h2>
+      <div class="alert-box">🚨 This is an emergency request</div>
+      <form>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name">Patient Name</label>
+            <input type="text" id="name" placeholder="Enter patient name" required />
+          </div>
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" placeholder="Patient age" required />
+          </div>
+          <div class="form-group">
+            <label for="blood">Blood Type Needed</label>
+            <select id="blood" required>
+              <option>Select blood type</option>
+              <option>O+</option><option>O-</option><option>A+</option><option>A-</option>
+              <option>B+</option><option>B-</option><option>AB+</option><option>AB-</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="units">Units Needed</label>
+            <input type="number" id="units" placeholder="Number of units" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Urgency Level</label>
+          <div class="radio-group">
+            <label><input type="radio" name="urgency" checked /> Normal (within 24 hours)</label>
+            <label><input type="radio" name="urgency" /> Urgent (within 6 hours)</label>
+            <label><input type="radio" name="urgency" /> Critical (immediate)</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" placeholder="Enter city or hospital" required />
+        </div>
+
+        <button type="submit" class="btn-gradient full">Submit Request</button>
+      </form>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="request-card">
+      <div class="how-it-works">
+        <h3>How It Works</h3>
+        <ol>
+          <li><span>1</span> <strong>Submit Request</strong><br><small>Fill out the form with patient and contact details</small></li>
+          <li><span>2</span> <strong>Donor Notification</strong><br><small>Compatible donors in your area receive notifications</small></li>
+          <li><span>3</span> <strong>Direct Contact</strong><br><small>Donors contact you directly to coordinate donation</small></li>
+        </ol>
+      </div>
+
+      <div class="hotline-card">
+        <strong>📞 Emergency Hotlines</strong>
+        <p>National Blood Service: <strong>1-800-GIVE-LIFE</strong></p>
+        <p>Emergency Services: <strong>911</strong></p>
+        <p>Organ Donation Hotline: <strong>1-800-DONATE-1</strong></p>
+      </div>
+    </div>
+
+
+
+  </section>
+
+</body>
+</html>

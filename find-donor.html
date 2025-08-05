@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find Donors – BloodConnect</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="https://img.icons8.com/fluency/48/like.png" width="32" alt="BloodConnect" />
+      <span>BloodConnect</span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="find-donors.html">Find Donors</a>
+      <a href="request-help.html">Request Help</a>
+      <a href="hospital-dashboard.html">For Hospitals</a>
+      <a href="about.html">About</a>
+    </nav>
+   
+     <div class="nav-actions">
+      <a href="signin.html" class="btn-outline">Sign In</a>
+      <a href="register-donor.html" class="btn-outline">Register</a>
+    </div>
+  </header>
+
+
+
+
+
+  <!-- Page Title -->
+  <section class="section-title">
+    <h1>Find Nearby Donors</h1>
+    <p>Use our interactive map to locate compatible blood and organ donors in your area.</p>
+  </section>
+
+  <!-- Main Layout -->
+  <section class="find-donors-grid">
+    <!-- Filters -->
+    <aside class="filters card">
+      <h3>🔍 Find here</h3>
+      <label>Blood Type</label>
+      <select>
+        <option>All Types</option>
+        <option>A+</option>
+        <option>O+</option>
+        <option>B+</option>
+        <option>AB+</option>
+        <option>A-</option>
+        <option>O-</option>
+        <option>B-</option>
+        <option>AB-</option>
+      </select>
+
+      <label>Search Radius</label>
+      <select>
+        <option>5 km</option>
+        <option>10 km</option>
+        <option>20 km</option>
+      </select>
+
+      <label>Location</label>
+      <input type="text" placeholder="Enter your location" />
+
+      <button class="btn-outlin">🔎Search</button>
+    </aside>
+
+    <!-- Map & Results -->
+    <div class="results">
+      <!-- Map Placeholder -->
+      <div class="map-placeholder card" id="map-box">
+        <p>🗺️ <strong>Find location here</strong></p>
+      
+        <button id="enable-location" class="btn-outlin">Enable Location </button>
+      </div>
+
+      <!-- Donor List -->
+      <h3>Nearby Donors (5 found)</h3>
+      <div class="donor-list">
+        <!-- Donor cards -->
+        <div class="donor-card card">
+          <div class="donor-info">
+            <strong>Sarah Johnson</strong>
+            <span>O+ • 0.8 km • 3 months ago</span>
+          </div>
+          <div class="badge green">Available</div>
+          <button class="btn-outline">Contact</button>
+        </div>
+
+        <div class="donor-card card">
+          <div class="donor-info">
+            <strong>Michael Chen</strong>
+            <span>A+ • 1.2 km • 6 months ago</span>
+          </div>
+          <div class="badge green">Available</div>
+          <button class="btn-outline">Contact</button>
+        </div>
+
+        <div class="donor-card card">
+          <div class="donor-info">
+            <strong>Emily Rodriguez</strong>
+            <span>B- • 2.1 km • 4 months ago</span>
+          </div>
+          <div class="badge gray">Unavailable</div>
+          <button class="btn-outline">Contact</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
