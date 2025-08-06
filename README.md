@@ -11,21 +11,19 @@
 - 🆘 **Request Help** – People in need can request blood with required details.
 - 📄 **About Page** – Provides info about the platform’s mission and working.
 
----
+📁 BloodConnect  
+├── 1. index.html — Home page  
+├── 2. about.html — About the platform  
+├── 3. find-donor.html — Search donors by blood group/location  
+├── 4. request-help.html — Request blood  
+├── 5. hospital-dashboard.html — Hospital blood stock management  
+├── 6. register-donor.html — Donor registration form  
+├── 7. signin.html — Donor login  
+├── 8. style.css — Styling for all pages  
+└── 9. script.js — All functionality and interactivity  
 
-## 📂 Project Structure
-BloodConnect/
-├── index.html # Home page
-├── about.html # About the platform
-├── find-donor.html # Search donors by blood group/location
-├── request-help.html # Request blood
-├── hospital-dashboard.html # Hospital blood stock management
-├── register-donor.html # Donor registration form
-├── signin.html # Donor login
-├── style.css # Styling for all pages
-└── script.js # All functionality and interactivity
 
----
+
 
 ## 💻 Technologies Used(No backend still)
 
