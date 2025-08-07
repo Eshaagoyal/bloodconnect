@@ -9,7 +9,6 @@ window.deleteStock = function(index) {
   renderStock();
 };
 
-
 // Render stock list and chart
 function renderStock() {
   const stockTable = document.getElementById('stockTable')?.querySelector('tbody');
@@ -51,7 +50,7 @@ function renderStock() {
 document.addEventListener('DOMContentLoaded', () => {
   const stockForm = document.getElementById('stockForm');
   const locationInput = document.querySelector('input[placeholder="Enter your location"]');
-  const searchButton = document.querySelector('button.btn-gradient');
+  const searchButton = document.querySelector('button.btn-outlin');
 
   // Hospital stock form submission
   if (stockForm) {
@@ -201,19 +200,6 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
   });
 
-  // Real-time clock
-  const footer = document.querySelector('footer');
-  if (footer) {
-    const clock = document.createElement('div');
-    clock.style.marginTop = '10px';
-    clock.style.fontSize = '0.9rem';
-    footer.appendChild(clock);
-    setInterval(() => {
-      const now = new Date();
-      clock.textContent = `⏰ ${now.toLocaleTimeString()}`;
-    }, 1000);
-  }
-
   // Shake animation
   const style = document.createElement('style');
   style.textContent = `
@@ -228,36 +214,35 @@ document.addEventListener('DOMContentLoaded', () => {
   document.head.appendChild(style);
 
   const donorForm = document.getElementById('donorForm');
-if (donorForm) {
-  donorForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+  if (donorForm) {
+    donorForm.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-    const name = document.getElementById('fullname').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirm-password').value;
-    const blood = document.getElementById('blood').value;
-    const location = document.getElementById('location').value;
+      const name = document.getElementById('fullname').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+      const blood = document.getElementById('blood').value;
+      const location = document.getElementById('location').value;
 
-    if (!name || !email || !phone || !password || !confirmPassword || !blood || !location) {
-      showBanner('❗ Please fill all fields');
-      return;
-    }
+      if (!name || !email || !phone || !password || !confirmPassword || !blood || !location) {
+        showBanner('❗ Please fill all fields');
+        return;
+      }
 
-    if (password !== confirmPassword) {
-      showBanner('❌ Passwords do not match');
-      return;
-    }
+      if (password !== confirmPassword) {
+        showBanner('❌ Passwords do not match');
+        return;
+      }
 
-    const donor = { name, email, phone, password, blood, location };
-    saveDonorToStorage(donor);
+      const donor = { name, email, phone, password, blood, location };
+      saveDonorToStorage(donor);
 
-    showBanner(`✅ Donor ${name} registered successfully!`);
-    donorForm.reset();
-  });
-}
-
+      showBanner(`✅ Donor ${name} registered successfully!`);
+      donorForm.reset();
+    });
+  }
 });
 
 // Banner notification
@@ -300,4 +285,10 @@ function showToast(message) {
     toast.style.opacity = '0';
     setTimeout(() => toast.remove(), 300);
   }, 3000);
+}
+
+function saveDonorToStorage(donor) {
+  let donors = JSON.parse(localStorage.getItem('donors')) || [];
+  donors.push(donor);
+  localStorage.setItem('donors', JSON.stringify(donors));
 }
